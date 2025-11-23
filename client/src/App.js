@@ -33,7 +33,7 @@ function App() {
     setLoading(true);
     setPrediction(null); // Reset previous prediction
     try {
-      const res = await axios.post(' https://salary-api-d8mr.onrender.com/options', formData);
+      const res = await axios.post(' https://salary-api-d8mr.onrender.com/predict', formData);
       setPrediction(res.data.salary);
     } catch (error) {
       console.error("Error predicting:", error);
