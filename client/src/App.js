@@ -19,7 +19,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/options')
+    axios.get(' https://salary-api-d8mr.onrender.com/options')
       .then(res => setOptions(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -33,7 +33,7 @@ function App() {
     setLoading(true);
     setPrediction(null); // Reset previous prediction
     try {
-      const res = await axios.post('http://127.0.0.1:5000/predict', formData);
+      const res = await axios.post(' https://salary-api-d8mr.onrender.com/options', formData);
       setPrediction(res.data.salary);
     } catch (error) {
       console.error("Error predicting:", error);
